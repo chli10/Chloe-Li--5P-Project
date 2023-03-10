@@ -1,0 +1,173 @@
+<!DOCTYPE html> <html><head>
+        <title>Chloe Li - 5.P Project </title>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald&amp;display=swap" rel="stylesheet">
+    <style>body {
+    font-family:"Comic Sans MS";
+    background-color: #ffddd8;
+    text-align: center;
+}
+.siblings{
+    border-radius: 5px;
+    border-color: #d4f0f7;
+    background-color: #f6dae4;
+}
+.enter{
+	border-radius: 5px;
+    background-color: #fb9aac;
+    color: white;
+    border-color: #d4f0f7;
+}
+
+.dessert{
+	border-radius: 5px;
+    border-color: #b1d9ec;
+    background-color: #ffffdf;
+}
+.enter2{
+	border-radius: 5px;
+    background-color: #fbf1ae;
+    color: #86c5d8;
+   	border-color: #b1d9ec;
+}
+::placeholder{
+  	color: #fb9aac;
+    opacity:1;
+    
+}
+.title-page-pic{
+    width:70%;
+    border-radius: 20px;
+}
+
+.siblingPic{
+    width: 40%;
+    border-radius: 20px;
+    border: 5px solid #d0d5f7;
+}
+
+ .dessertPic{
+ 	width: 40%;
+    border-radius: 20px;
+    border: 5px solid #ffffd8;
+}
+
+h4 {
+    color: #fb6f92;
+}
+
+.title{
+    color: #e0115f;
+}
+
+.question1{
+    display: none;
+    color: #fb6f92;
+}
+
+.question2{
+    display:none;
+	color: #fb6f92;
+}
+
+.result{
+    display: none;
+}
+
+.answer{
+    font-size: 30px;
+  	color: #fb6f92;
+}
+
+.images{
+    border-radius: 15px;
+    width: 50%;
+}</style></head>
+    <body>
+        <div class="title">
+            <h1>which sanrio character are you?</h1>
+        </div>
+        <div class="title-page">
+              <p>click anywhere to see the questions! </p>
+       <img class="title-page-pic" src="https://osssource.alizila.com/uploads/2022/07/Sanrio-Characters.png">
+          
+        </div>
+        
+        <div class="question1">
+            <h1>how many siblings do you have?</h1>
+            <img class="siblingPic" src="http://cdn.shopify.com/s/files/1/0107/5124/6372/collections/Little_Twin_Star_Header_1200x1200.png?v=1569551795">
+            <br>
+            <input class="siblings" placeholder="# of siblings">
+            <button class="enter"> enter </button>
+        </div>
+        
+        <div class="question2">
+            <h1>cookies or cake?</h1>
+            <img class="dessertPic" src="https://i.pinimg.com/originals/d0/0a/02/d00a0236842bae7bec2c72298786f90b.png">
+            <br>
+            <input class="dessert" placeholder="Put cookies or cake"> 
+            <button class="enter2"> enter </button>
+               </div>
+
+        
+       
+        <div class="result">
+            <div class="answer">
+            </div>
+         <br>
+          <img class="images" src="https://cdn.shopify.com/s/files/1/0416/8083/0620/files/01132022_soc_pinterestboardcoverupdate_PC_1200x1200_2_480x480.png?v=1643148624">
+        </div>
+
+
+
+    
+<script>
+/*__POPCODESTART__*/
+var enter = document.querySelector(".enter");
+var question1 = document.querySelector(".question1");
+var titlePage = document.querySelector(".title-page");
+var title = document.querySelector(".title");
+var enterButton = document.querySelector(".enter");
+var question2 = document.querySelector(".question2");
+var enter2 = document.querySelector(".enter2");
+var answer = document.querySelector(".answer");
+var img = document.querySelector(".images");
+var result = document.querySelector(".result");
+
+titlePage.onclick = function () {
+  question1.style.display = "block";
+  titlePage.style.display = "none";
+  title.style.display = "none";
+};
+
+enter.onclick = function () {
+  question2.style.display = "block";
+  question1.style.display = "none";
+  var siblings = document.querySelector(".siblings").value;
+  console.log("userInput");
+  var dessert = document.querySelector(".dessert").value;
+  console.log("userInput2");
+};
+
+enter2.onclick = function () {
+  question2.style.display = "none";
+  result.style.display = "block";
+  var dessert = document.querySelector(".dessert").value;
+  console.log("userInput2");
+  var siblings = document.querySelector(".siblings").value;
+  console.log("userInput");
+
+  if (siblings <= 2 && dessert === "cookies") {
+    answer.innerHTML = "Since you have " + siblings + " siblings and you like eating " + dessert + "...you are most like Pochacco!";
+    img.src = "https://cdn.shopify.com/s/files/1/0416/8083/0620/files/01132022_soc_pinterestboardcoverupdate_PC_1200x1200_2_480x480.png?v=1643148624";
+  } else if (siblings <= 2 && dessert === "cake") {
+    answer.innerHTML = "Since you have " + siblings + " siblings and you like eating " + dessert + "...you are most like Hello Kitty!";
+    img.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYTEw2NOCocHI4M3qHstL2_Z5hwGqQgaRX6g&usqp=CAU";
+  } else if (siblings > 2 && dessert === "cookies") {
+    answer.innerHTML = "Since you have " + siblings + " siblings and you like eating " + dessert + "...you are most like Badtz Maru!";
+    img.src = "http://cdn.shopify.com/s/files/1/0416/8083/0620/articles/XO_1200x1200_50a6ecae-031c-4dc3-a8d5-4b3e756b10d9_600x.png?v=1656354632";
+  } else if (siblings > 2 && dessert === "cake") {
+    answer.innerHTML = "Since you have " + siblings + " siblings and you like eating " + dessert + "...you are most like My Melody!";
+    img.src = "https://i.pinimg.com/550x/a7/ec/34/a7ec3492f162f6a2fb911a039df85f3b.jpg";
+  }
+};
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBvcGNvZGVQcmV2aWV3LmpzIl0sIm5hbWVzIjpbImVudGVyIiwiZG9jdW1lbnQiLCJxdWVyeVNlbGVjdG9yIiwicXVlc3Rpb24xIiwidGl0bGVQYWdlIiwidGl0bGUiLCJlbnRlckJ1dHRvbiIsInF1ZXN0aW9uMiIsImVudGVyMiIsImFuc3dlciIsImltZyIsInJlc3VsdCIsIm9uY2xpY2siLCJzdHlsZSIsImRpc3BsYXkiLCJzaWJsaW5ncyIsInZhbHVlIiwiY29uc29sZSIsImxvZyIsImRlc3NlcnQiLCJpbm5lckhUTUwiLCJzcmMiXSwibWFwcGluZ3MiOiJBQUFBLElBQUlBLEtBQUssR0FBQ0MsUUFBUSxDQUFDQyxhQUFULENBQXVCLFFBQXZCLENBQVY7QUFDQSxJQUFJQyxTQUFTLEdBQUNGLFFBQVEsQ0FBQ0MsYUFBVCxDQUF1QixZQUF2QixDQUFkO0FBQ0EsSUFBSUUsU0FBUyxHQUFDSCxRQUFRLENBQUNDLGFBQVQsQ0FBdUIsYUFBdkIsQ0FBZDtBQUNBLElBQUlHLEtBQUssR0FBQ0osUUFBUSxDQUFDQyxhQUFULENBQXVCLFFBQXZCLENBQVY7QUFDQSxJQUFJSSxXQUFXLEdBQUNMLFFBQVEsQ0FBQ0MsYUFBVCxDQUF1QixRQUF2QixDQUFoQjtBQUNBLElBQUlLLFNBQVMsR0FBQ04sUUFBUSxDQUFDQyxhQUFULENBQXVCLFlBQXZCLENBQWQ7QUFDQSxJQUFJTSxNQUFNLEdBQUNQLFFBQVEsQ0FBQ0MsYUFBVCxDQUF1QixTQUF2QixDQUFYO0FBQ0EsSUFBSU8sTUFBTSxHQUFDUixRQUFRLENBQUNDLGFBQVQsQ0FBdUIsU0FBdkIsQ0FBWDtBQUNBLElBQUlRLEdBQUcsR0FBQ1QsUUFBUSxDQUFDQyxhQUFULENBQXVCLFNBQXZCLENBQVI7QUFDQSxJQUFJUyxNQUFNLEdBQUNWLFFBQVEsQ0FBQ0MsYUFBVCxDQUF1QixTQUF2QixDQUFYOztBQUNBRSxTQUFTLENBQUNRLE9BQVYsR0FBa0IsWUFBVTtBQUN4QlQsRUFBQUEsU0FBUyxDQUFDVSxLQUFWLENBQWdCQyxPQUFoQixHQUF3QixPQUF4QjtBQUNBVixFQUFBQSxTQUFTLENBQUNTLEtBQVYsQ0FBZ0JDLE9BQWhCLEdBQXdCLE1BQXhCO0FBQ0FULEVBQUFBLEtBQUssQ0FBQ1EsS0FBTixDQUFZQyxPQUFaLEdBQW9CLE1BQXBCO0FBQ0gsQ0FKRDs7QUFNQWQsS0FBSyxDQUFDWSxPQUFOLEdBQWMsWUFBVTtBQUNwQkwsRUFBQUEsU0FBUyxDQUFDTSxLQUFWLENBQWdCQyxPQUFoQixHQUF3QixPQUF4QjtBQUNBWCxFQUFBQSxTQUFTLENBQUNVLEtBQVYsQ0FBZ0JDLE9BQWhCLEdBQXdCLE1BQXhCO0FBQ0YsTUFBSUMsUUFBUSxHQUFDZCxRQUFRLENBQUNDLGFBQVQsQ0FBdUIsV0FBdkIsRUFBb0NjLEtBQWpEO0FBQ0VDLEVBQUFBLE9BQU8sQ0FBQ0MsR0FBUixDQUFZLFdBQVo7QUFDQSxNQUFJQyxPQUFPLEdBQUNsQixRQUFRLENBQUNDLGFBQVQsQ0FBdUIsVUFBdkIsRUFBbUNjLEtBQS9DO0FBQ0FDLEVBQUFBLE9BQU8sQ0FBQ0MsR0FBUixDQUFZLFlBQVo7QUFFRixDQVJGOztBQVVBVixNQUFNLENBQUNJLE9BQVAsR0FBZSxZQUFVO0FBQ3JCTCxFQUFBQSxTQUFTLENBQUNNLEtBQVYsQ0FBZ0JDLE9BQWhCLEdBQXdCLE1BQXhCO0FBQ0FILEVBQUFBLE1BQU0sQ0FBQ0UsS0FBUCxDQUFhQyxPQUFiLEdBQXFCLE9BQXJCO0FBQ0EsTUFBSUssT0FBTyxHQUFDbEIsUUFBUSxDQUFDQyxhQUFULENBQXVCLFVBQXZCLEVBQW1DYyxLQUEvQztBQUNBQyxFQUFBQSxPQUFPLENBQUNDLEdBQVIsQ0FBWSxZQUFaO0FBQ0EsTUFBSUgsUUFBUSxHQUFDZCxRQUFRLENBQUNDLGFBQVQsQ0FBdUIsV0FBdkIsRUFBb0NjLEtBQWpEO0FBQ0FDLEVBQUFBLE9BQU8sQ0FBQ0MsR0FBUixDQUFZLFdBQVo7O0FBR0EsTUFBSUgsUUFBUSxJQUFHLENBQVgsSUFBZ0JJLE9BQU8sS0FBRyxTQUE5QixFQUF3QztBQUN2Q1YsSUFBQUEsTUFBTSxDQUFDVyxTQUFQLEdBQWlCLG9CQUFtQkwsUUFBbkIsR0FBOEIsZ0NBQTlCLEdBQWlFSSxPQUFqRSxHQUEyRSxnQ0FBNUY7QUFDTFQsSUFBQUEsR0FBRyxDQUFDVyxHQUFKLEdBQVEsdUlBQVI7QUFHQyxHQUxHLE1BS0csSUFBSU4sUUFBUSxJQUFJLENBQVosSUFBaUJJLE9BQU8sS0FBRyxNQUEvQixFQUFzQztBQUM1Q1YsSUFBQUEsTUFBTSxDQUFDVyxTQUFQLEdBQWlCLG9CQUFtQkwsUUFBbkIsR0FBOEIsZ0NBQTlCLEdBQWlFSSxPQUFqRSxHQUEyRSxtQ0FBNUY7QUFDR1QsSUFBQUEsR0FBRyxDQUFDVyxHQUFKLEdBQVEscUdBQVI7QUFHSCxHQUxNLE1BS0EsSUFBSU4sUUFBUSxHQUFFLENBQVYsSUFBZUksT0FBTyxLQUFHLFNBQTdCLEVBQXVDO0FBQzdDVixJQUFBQSxNQUFNLENBQUNXLFNBQVAsR0FBaUIsb0JBQW1CTCxRQUFuQixHQUE4QixnQ0FBOUIsR0FBaUVJLE9BQWpFLEdBQTJFLGtDQUE1RjtBQUFnSVQsSUFBQUEsR0FBRyxDQUFDVyxHQUFKLEdBQVEsa0lBQVI7QUFHaEksR0FKTSxNQUlELElBQUlOLFFBQVEsR0FBQyxDQUFULElBQWNJLE9BQU8sS0FBRyxNQUE1QixFQUFtQztBQUNyQ1YsSUFBQUEsTUFBTSxDQUFDVyxTQUFQLEdBQWlCLG9CQUFtQkwsUUFBbkIsR0FBOEIsZ0NBQTlCLEdBQWlFSSxPQUFqRSxHQUEyRSxpQ0FBNUY7QUFBK0hULElBQUFBLEdBQUcsQ0FBQ1csR0FBSixHQUFRLHlFQUFSO0FBQ2xJO0FBRUEsQ0EzQkQiLCJzb3VyY2VzQ29udGVudCI6WyJsZXQgZW50ZXI9ZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5lbnRlclwiKTtcbmxldCBxdWVzdGlvbjE9ZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5xdWVzdGlvbjFcIik7XG5sZXQgdGl0bGVQYWdlPWRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIudGl0bGUtcGFnZVwiKTtcbmxldCB0aXRsZT1kb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLnRpdGxlXCIpO1xubGV0IGVudGVyQnV0dG9uPWRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIuZW50ZXJcIik7XG5sZXQgcXVlc3Rpb24yPWRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIucXVlc3Rpb24yXCIpO1xubGV0IGVudGVyMj1kb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLmVudGVyMlwiKTtcbmxldCBhbnN3ZXI9ZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5hbnN3ZXJcIik7XG5sZXQgaW1nPWRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIuaW1hZ2VzXCIpO1xubGV0IHJlc3VsdD1kb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLnJlc3VsdFwiKTtcbnRpdGxlUGFnZS5vbmNsaWNrPWZ1bmN0aW9uKCl7XG4gICAgcXVlc3Rpb24xLnN0eWxlLmRpc3BsYXk9XCJibG9ja1wiO1xuICAgIHRpdGxlUGFnZS5zdHlsZS5kaXNwbGF5PVwibm9uZVwiO1xuICAgIHRpdGxlLnN0eWxlLmRpc3BsYXk9XCJub25lXCI7XG59O1xuXG5lbnRlci5vbmNsaWNrPWZ1bmN0aW9uKCl7XG4gICAgcXVlc3Rpb24yLnN0eWxlLmRpc3BsYXk9XCJibG9ja1wiO1xuICAgIHF1ZXN0aW9uMS5zdHlsZS5kaXNwbGF5PVwibm9uZVwiO1xuIFx0bGV0IHNpYmxpbmdzPWRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIuc2libGluZ3NcIikudmFsdWU7XG4gICAgY29uc29sZS5sb2coXCJ1c2VySW5wdXRcIik7XG4gICAgbGV0IGRlc3NlcnQ9ZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5kZXNzZXJ0XCIpLnZhbHVlO1xuICAgIGNvbnNvbGUubG9nKFwidXNlcklucHV0MlwiKTtcbiAgIFxuXHR9O1xuXG5lbnRlcjIub25jbGljaz1mdW5jdGlvbigpe1xuICAgIHF1ZXN0aW9uMi5zdHlsZS5kaXNwbGF5PVwibm9uZVwiO1xuICAgIHJlc3VsdC5zdHlsZS5kaXNwbGF5PVwiYmxvY2tcIjtcbiAgICBsZXQgZGVzc2VydD1kb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLmRlc3NlcnRcIikudmFsdWU7XG4gICAgY29uc29sZS5sb2coXCJ1c2VySW5wdXQyXCIpO1xuICAgIGxldCBzaWJsaW5ncz1kb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLnNpYmxpbmdzXCIpLnZhbHVlO1xuICAgIGNvbnNvbGUubG9nKFwidXNlcklucHV0XCIpO1xuICAgIFxuICAgIFxuICAgIGlmIChzaWJsaW5ncyA8PTIgJiYgZGVzc2VydD09PVwiY29va2llc1wiKXtcbiAgICBcdGFuc3dlci5pbm5lckhUTUw9XCJTaW5jZSB5b3UgaGF2ZSBcIisgc2libGluZ3MgKyBcIiBzaWJsaW5ncyBhbmQgeW91IGxpa2UgZWF0aW5nIFwiICsgZGVzc2VydCArIFwiLi4ueW91IGFyZSBtb3N0IGxpa2UgUG9jaGFjY28hXCI7XG5pbWcuc3JjPVwiaHR0cHM6Ly9jZG4uc2hvcGlmeS5jb20vcy9maWxlcy8xLzA0MTYvODA4My8wNjIwL2ZpbGVzLzAxMTMyMDIyX3NvY19waW50ZXJlc3Rib2FyZGNvdmVydXBkYXRlX1BDXzEyMDB4MTIwMF8yXzQ4MHg0ODAucG5nP3Y9MTY0MzE0ODYyNFwiO1xuICAgICAgICBcbiAgICAgICAgXG59IGVsc2UgaWYgKHNpYmxpbmdzIDw9IDIgJiYgZGVzc2VydD09PVwiY2FrZVwiKXtcblx0YW5zd2VyLmlubmVySFRNTD1cIlNpbmNlIHlvdSBoYXZlIFwiKyBzaWJsaW5ncyArIFwiIHNpYmxpbmdzIGFuZCB5b3UgbGlrZSBlYXRpbmcgXCIgKyBkZXNzZXJ0ICsgXCIuLi55b3UgYXJlIG1vc3QgbGlrZSBIZWxsbyBLaXR0eSFcIjtcbiAgICBpbWcuc3JjPVwiaHR0cHM6Ly9lbmNyeXB0ZWQtdGJuMC5nc3RhdGljLmNvbS9pbWFnZXM/cT10Ym46QU5kOUdjVFlURXcyTk9Db2NISTRNM3FIc3RMMl9aNWh3R3FRZ2FSWDZnJnVzcXA9Q0FVXCI7XG4gICAgXG4gICAgXG59IGVsc2UgaWYgKHNpYmxpbmdzID4yICYmIGRlc3NlcnQ9PT1cImNvb2tpZXNcIil7XG5cdGFuc3dlci5pbm5lckhUTUw9XCJTaW5jZSB5b3UgaGF2ZSBcIisgc2libGluZ3MgKyBcIiBzaWJsaW5ncyBhbmQgeW91IGxpa2UgZWF0aW5nIFwiICsgZGVzc2VydCArIFwiLi4ueW91IGFyZSBtb3N0IGxpa2UgQmFkdHogTWFydSFcIjsgaW1nLnNyYz1cImh0dHA6Ly9jZG4uc2hvcGlmeS5jb20vcy9maWxlcy8xLzA0MTYvODA4My8wNjIwL2FydGljbGVzL1hPXzEyMDB4MTIwMF81MGE2ZWNhZS0wMzFjLTRkYzMtYThkNS00YjNlNzU2YjEwZDlfNjAweC5wbmc/dj0xNjU2MzU0NjMyXCI7XG4gICAgXG4gICAgXG59ZWxzZSBpZiAoc2libGluZ3M+MiAmJiBkZXNzZXJ0PT09XCJjYWtlXCIpeyBcbiAgICBhbnN3ZXIuaW5uZXJIVE1MPVwiU2luY2UgeW91IGhhdmUgXCIrIHNpYmxpbmdzICsgXCIgc2libGluZ3MgYW5kIHlvdSBsaWtlIGVhdGluZyBcIiArIGRlc3NlcnQgKyBcIi4uLnlvdSBhcmUgbW9zdCBsaWtlIE15IE1lbG9keSFcIjsgaW1nLnNyYz1cImh0dHBzOi8vaS5waW5pbWcuY29tLzU1MHgvYTcvZWMvMzQvYTdlYzM0OTJmMTYyZjZhMmZiOTExYTAzOWRmODVmM2IuanBnXCI7XG59XG4gICAgXG59O1xuICAgIFxuXG5cblxuXG5cblxuXG5cbiJdfQ==</script></body></html>
